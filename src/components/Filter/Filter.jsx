@@ -1,15 +1,15 @@
 import css from './Filter.module.css';
 // =======================
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFilter } from '../../redux/filterSlice';
-import { getFilter } from '../../redux/selector';
+import { setFilter } from '../../redux/filterSlice';
+import { selectFilter } from '../../redux/selector';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
 
   const handleFilterChange = e => {
-    dispatch(changeFilter(e.target.value));
+    dispatch(setFilter(e.target.value));
   };
   return (
     <div className={css.filterContainer}>
